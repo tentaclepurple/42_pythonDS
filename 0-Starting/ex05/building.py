@@ -28,25 +28,25 @@ def count_characters(text):
 
 
 def main():
-    if len(sys.argv) > 2:
-        raise AssertionError("AssertionError: too many arguments")
+    try:
+        if len(sys.argv) > 2:
+            raise AssertionError("AssertionError: too many arguments")
 
-    if len(sys.argv) == 1:
-        try:
-            text = input("What is the text to count?\n")
-            text += "\n"
-        except EOFError:
-            text = ""
+        if len(sys.argv) == 1:
+            try:
+                text = input("What is the text to count?\n")
+                text += "\n"
+            except EOFError:
+                text = ""
 
-    else:
-        text = sys.argv[1]
+        else:
+            text = sys.argv[1]
 
-    result = count_characters(text)
-    print(result)
+        result = count_characters(text)
+        print(result)
+    except AssertionError as e:
+        print(e)
 
 
 if __name__ == "__main__":
-    try:
-        main()
-    except AssertionError as e:
-        print(e)
+    main()
