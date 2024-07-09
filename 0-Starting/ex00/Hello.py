@@ -17,7 +17,7 @@ def select_type(data):
                 elif i == 1 and element == 'Urduliz':
                     print(f"'{element}'}}")
                 else:
-                    print("'Urduliz'}")      
+                    print("'Urduliz'}")
         elif isinstance(data, dict):
             data = {'Hello': '42Urduliz'}
             for key, value in data.items():

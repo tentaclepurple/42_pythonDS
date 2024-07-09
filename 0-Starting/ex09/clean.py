@@ -2,6 +2,9 @@ import os
 
 
 def uninstall():
+    """
+    Uninstall the package.
+    """
     os.system("rm -rf build")
     os.system("rm -rf dist")
     os.system("rm -rf ft_package.egg-info")

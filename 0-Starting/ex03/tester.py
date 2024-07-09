@@ -16,7 +16,7 @@ print(NULL_not_found("Brian"))
 """ Empty = ”
 
 Expected output:
-  
+
 $>python tester.py | cat -e
 
 Nothing: None <class 'NoneType'>$

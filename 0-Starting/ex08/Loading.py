@@ -1,15 +1,15 @@
 import time
 from time import sleep
 import shutil
-from tqdm import tqdm
 
 
 def format_time(seconds):
     """
-    Format the given time in seconds as MM:SS. 
+    Format the given time in seconds as MM:SS.
     """
     m, s = divmod(seconds, 60)
     return f"{int(m):02d}:{int(s):02d}"
+
 
 def ft_tqdm(lst: range) -> None:
     """
@@ -17,9 +17,9 @@ def ft_tqdm(lst: range) -> None:
 
     This function emulates the behavior of tqdm by displaying
      a progress bar in the terminal.
-    It shows the percentage of progress, a visual progress bar, 
+    It shows the percentage of progress, a visual progress bar,
     the current iteration count,
-    elapsed time, estimated time remaining (ETA), 
+    elapsed time, estimated time remaining (ETA),
     and iteration speed (items per second).
 
     Args:
@@ -50,7 +50,7 @@ def ft_tqdm(lst: range) -> None:
 
         print(f"\r{progress_info} {time_info}", end="", flush=True)
         yield item
-    
+
 
 def main():
     for elem in ft_tqdm(range(333)):
