@@ -1,9 +1,8 @@
 from PIL import Image
 import numpy as np
-from numpy import ndarray
 
 
-def ft_load(path: str) -> ndarray:
+def ft_load(path: str) -> tuple[Image.Image, tuple[int, int, int]]:
     """
         Load image from path and return as numpy array
         options:
@@ -18,9 +17,12 @@ def ft_load(path: str) -> ndarray:
 
         img_array = np.array(img)
 
-        print(f"The shape of image is: {img_array.shape}")
+        shape = img_array.shape
 
-        return img_array
+        print(f"The shape of image is: {shape}")
+        print(img_array)
+
+        return img, shape
 
     except Exception as e:
         print(f"Error loading image: {e}")
