@@ -1,9 +1,22 @@
 from PIL import Image
 import numpy as np
-from numpy import ndarray
 
 
-def ft_load(path: str) -> ndarray:
+def display_and_save_image(array: np.ndarray, name: str):
+    """
+    Save the image witih the name given
+    """
+    if array is not None:
+        output_file_name = name.replace(" ", "_")
+        output_file_name += ".jpg"
+        img = Image.fromarray(array)
+        img.save(output_file_name)
+
+    else:
+        raise AssertionError("No image data to display.")
+
+
+def ft_load(path: str) -> np.ndarray:
     """
         Load image from path and return as numpy array
         options:
@@ -21,7 +34,10 @@ def ft_load(path: str) -> ndarray:
         if img_array.ndim != 3:
             raise AssertionError("Invalid image data")
 
-        print(f"The shape of image is: {img_array.shape}")
+        shape = img_array.shape
+
+        print(f"The shape of image is: {shape}")
+        print(img_array)
 
         return img_array
 
@@ -30,10 +46,6 @@ def ft_load(path: str) -> ndarray:
         return None
 
 
-def main():
+if __name__ == "__main__":
     img = ft_load("./animal.jpeg")
     print(img)
-
-
-if __name__ == "__main__":
-    main()

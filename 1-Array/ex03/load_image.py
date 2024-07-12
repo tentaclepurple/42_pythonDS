@@ -17,6 +17,9 @@ def ft_load(path: str) -> tuple[Image.Image, tuple[int, int, int]]:
 
         img_array = np.array(img)
 
+        if img_array.ndim != 3:
+            raise AssertionError("Invalid image data")
+
         shape = img_array.shape
 
         print(f"The shape of image is: {shape}")

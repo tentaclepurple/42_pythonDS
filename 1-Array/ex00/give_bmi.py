@@ -26,10 +26,14 @@ def apply_limit(bmi: list[int | float], limit: int) -> list[bool]:
         print("BMI list and limit must be integers or floats.")
 
 
-if __name__ == "__main__":
+def main():
     height = [1.75, 1.65, 1.85, 1.55]
     weight = [70, 55, 80, 45]
     bmi = give_bmi(height, weight)
     print(bmi)
     limit = 25
     print(apply_limit(bmi, limit))
+
+
+if __name__ == "__main__":
+    main()

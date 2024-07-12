@@ -42,7 +42,7 @@ def rotate90acw(matrix: np.ndarray) -> np.ndarray:
         rotated = np.array(matrixT)
         return rotated
 
-    except Exception as e:  
+    except Exception as e:
         print(f"Error rotating 270 image: {e}")
 
 
@@ -60,14 +60,9 @@ def ft_rotate():
         print(f"Error rotating image: {e}")
 
 
-if __name__ == "__main__":
+def main():
     ft_rotate()
-    
-    """ mat = [
-        [1, 2, 3, 4],
-        [5, 6, 7, 8],
-        [9, 10, 11, 12]
-        ]
-    print(mat)
-    mat2 = rotate90acw(mat)
-    print(mat2) """
+
+
+if __name__ == "__main__":
+    main()

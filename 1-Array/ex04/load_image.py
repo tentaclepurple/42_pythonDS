@@ -1,5 +1,23 @@
 from PIL import Image
 import numpy as np
+import matplotlib.pyplot as plt
+
+
+def display_and_save_image(array: np.ndarray, name: str):
+    """
+    Display the image with x and y axis labels and save the plot.
+    """
+    if array is not None:
+        plt.imshow(array[:, :, 0], cmap='gray')
+        plt.xlabel('X-axis')
+        plt.ylabel('Y-axis')
+        plt.title(str)
+        output_file_name = name.replace(" ", "_")
+        output_file_name += ".jpg"
+        plt.savefig(output_file_name)
+        plt.show()
+    else:
+        raise AssertionError("No image data to display.")
 
 
 def ft_load(path: str) -> tuple[Image.Image, tuple[int, int, int]]:
@@ -16,6 +34,9 @@ def ft_load(path: str) -> tuple[Image.Image, tuple[int, int, int]]:
         img = Image.open(path)
 
         img_array = np.array(img)
+
+        if img_array.ndim != 3:
+            raise AssertionError("Invalid image data")
 
         shape = img_array.shape
 
