@@ -1,5 +1,10 @@
 from load_image import ft_load
 
 
-img = ft_load("./animal.jpeg")
-print(img)
+def main():
+    img = ft_load("./animal.jpeg")
+    print(img)
+
+
+if __name__ == "__main__":
+    main()

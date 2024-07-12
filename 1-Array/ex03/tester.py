@@ -1,5 +1,9 @@
-from load_image import ft_load
+from zoom import ft_zoom
 
 
-img = ft_load("./animal.jpeg")
-print(img)
+if __name__ == "__main__":
+    left = 462
+    upper = 100
+    right = 862
+    lower = 500
+    ft_zoom("./animal.jpeg", left, upper, right, lower)

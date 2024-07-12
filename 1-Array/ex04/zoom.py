@@ -3,7 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 
-def display_and_save_image(array):
+def display_and_save_image(array: np.ndarray, name: str):
     """
     Display the image with x and y axis labels and save the plot.
     """
@@ -11,8 +11,10 @@ def display_and_save_image(array):
         plt.imshow(array[:, :, 0], cmap='gray')
         plt.xlabel('X-axis')
         plt.ylabel('Y-axis')
-        plt.title('Zoomed and Grayscale Image')
-        plt.savefig("cropped_image.jpg")
+        plt.title(str)
+        output_file_name = name.replace(" ", "_")
+        output_file_name += ".jpg"
+        plt.savefig(output_file_name)
         plt.show()
     else:
         raise AssertionError("No image data to display.")
@@ -38,8 +40,6 @@ def ft_zoom(path: str, left, upper, right, lower) -> None:
 
         if arr.ndim == 2:
             arr = np.expand_dims(arr, axis=2)
-
-        display_and_save_image(arr)
 
         """bn_img.save("zoomed_image.jpg") save image to disk"""
 
