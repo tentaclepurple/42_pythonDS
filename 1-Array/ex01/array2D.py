@@ -13,7 +13,6 @@ def slice_me(family: list, start: int, end: int) -> list:
             raise ValueError("Input must be a list of lists")
 
         row_length = len(family[0])
-        print(([len(row) == row_length for row in family]))
         if not all(len(row) == row_length for row in family):
             raise ValueError("All rows must have the same length")
 

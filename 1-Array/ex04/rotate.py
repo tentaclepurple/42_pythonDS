@@ -1,4 +1,5 @@
-from zoom import ft_zoom, display_and_save_image
+from zoom import ft_zoom
+from load_image import display_and_save_image
 import numpy as np
 
 

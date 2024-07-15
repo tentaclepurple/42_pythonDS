@@ -49,7 +49,6 @@ def grey_scale(arr: np.ndarray) -> np.ndarray:
     grey_channel = red_channel + green_channel + blue_channel
     grey_channel = grey_channel.astype(np.uint8)
 
-    grey_channel = grey_channel.astype(np.uint8)
     grey_image = np.stack([grey_channel, grey_channel, grey_channel], axis=2)
 
     print(grey_image.shape)
